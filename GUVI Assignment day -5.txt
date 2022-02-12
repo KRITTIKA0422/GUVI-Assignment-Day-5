@@ -1,0 +1,492 @@
+
+1.Do the below programs in anonymous function & IIFE
+
+a. Print odd numbers in an array
+
+CODE USING ANONYMOUS FUNCTION-
+let oddnum=function(array){
+let odd=[];
+for(let i=0;i<array.length;i++){
+if(array[i]%2!=0)              //checks for odd numbers
+odd.push(array[i]);            //pushes the odd numbers in odd[] array
+}
+console.log(odd);
+}
+oddnum([1,2,3,4,5,6,7,8,9,10,11,12]);     //takes value of the array taken as parameter of the function
+
+OUTPUT-
+[ 1, 3, 5, 7, 9, 11 ]
+
+CODE USING IIFE(Immediately Invoked Function Expression)-
+(function(array){
+let odd=[];
+for(let i=0;i<array.length;i++){
+if(array[i]%2!=0)                      //checks for odd numbers
+odd.push(array[i]);                     //pushes the odd numbers in odd[] array
+}
+console.log(odd);
+})([1,2,3,4,5,6,7,8,9,10,11,12]);        //takes value of the array taken as parameter of the function
+
+OUTPUT-
+[ 1, 3, 5, 7, 9, 11 ]
+
+b.Convert all the strings to title caps in a string array
+
+CODE USING ANONYMOUS FUNCTION-
+let titlecase=function(str){
+var str1=[];
+var str2=[];
+var s="";
+var f="";
+var c;
+var f;
+var p=[];
+for(let i=0;i<str.length;i++){
+str[i]=str[i].toString();
+str[i]=str[i].toLowerCase();                      //converting all the elements of array of strings to lowercase
+str2[i]=str[i].charAt(0).toUpperCase();            //converting the first letter of each element of array to uppercase
+c=str[i];
+p=c.split("");                                    //spliting the letters of each element in the array
+for(let j=1;j<p.length;j++){
+s+=p[j];                                          //storing the letters of each element of the array starting from 2nd letter to last letter of each element in the string s
+}
+f=str2[i]+s;                                      //storing the 1st uppercase letter and rest lowercase letters of each element of the array in string f 
+str1[i]=f;                                         //storing string f as an element of str1[]
+s="";                                              //assigning null value to string s and f so that it can convert next element of array to titlecase
+f="";
+}
+console.log(str1);                                //printing strings in array converted to titlecase
+}
+titlecase(["geeks","krittika","rAShita","aRnab"]);     //takes value of the array taken as parameter of the function 
+
+OUTPUT-
+[ 'Geeks', 'Krittika', 'Rashita', 'Arnab' ]
+
+CODE USING IIFE(Immediately Invoked Function Expression)-
+(function(str){
+var str1=[];
+var str2=[];
+var s="";
+var f="";
+var c;
+var f;
+var p=[];
+for(let i=0;i<str.length;i++){
+str[i]=str[i].toLowerCase();                    //converting all the elements of array of strings to lowercase
+str2[i]=str[i].charAt(0).toUpperCase();         //converting the first letter of each element of array to uppercase
+c=str[i];
+p=c.split("");                                   //spliting the letters of each element in the array
+for(let j=1;j<p.length;j++){
+s+=p[j];                                         //storing the letters of each element of the array starting from 2nd letter to last letter of each element in the string s
+}
+f=str2[i]+s;                                     //storing the 1st uppercase letter and rest lowercase letters of each element of the array in string f 
+str1[i]=f;                                       //storing string f as an element of str1[]
+s="";                                            //assigning null value to string s and f so that it can convert next element of array to titlecase
+f="";
+}
+console.log(str1);                               //printing strings in array converted to titlecase
+})(["geeks","krittika","rAShita","aRnab"]); //takes value of the array taken as parameter of the function 
+
+OUTPUT-
+[ 'Geeks', 'Krittika', 'Rashita', 'Arnab' ]
+
+c.Sum of all numbers in an array
+
+CODE USING ANONYMOUS FUNCTION-
+let sumnum=function(array){
+let sum=0;
+for(let i=0;i<array.length;i++)
+sum+=array[i];                           //adds the elements of array and stores in sum
+console.log(sum);
+}
+sumnum([1,2,3,4,5,6,7,8,9,10,11,12]);       //takes value of the array taken as parameter of the function
+
+OUTPUT-
+78
+
+CODE USING IIFE(Immediately Invoked Function Expression)-
+(function(array){
+let sum=0;
+for(let i=0;i<array.length;i++)
+sum+=array[i];                           //adds the elements of array and stores in sum
+console.log(sum);
+})([1,2,3,4,5,6,7,8,9,10,11,12]);         //takes value of the array taken as parameter of the function
+
+OUTPUT-
+78
+
+d. Return all the prime numbers in an array
+
+CODE USING ANONYMOUS FUNCTION-
+let num=function(array){
+let prime=[];
+let flag;
+for(let i=0;i<array.length;i++){
+flag=0;
+let n=(array[i]**2)**(1/2);
+for(let j=2;j<n;j++){
+if(array[i]%j==0)                         //checks whether the number is divisible by other numbers except 1
+{
+flag=1;                                   //if number is not prime, count changes to 1 and breaks out of the loop
+break;
+}
+}
+if(flag==0 && array[i]!=1)
+prime.push(array[i]);                    //if count remains zero and number is not 1 then the number is prime and is pushed inside the array prime
+}
+return prime;                            //returns the array of prime numbers
+}
+console.log(num([1,2,-3,4,5,6,-7,8,9,10,11,12]));       //takes value of the array taken as parameter of the function and prints prime numbers
+
+OUTPUT-
+[ 2, -3, 5, -7, 11 ]
+
+CODE USING IIFE(Immediately Invoked Function Expression)-
+(function(array){
+let prime=[];
+let flag;
+for(let i=0;i<array.length;i++){
+flag=0;
+let n=(array[i]**2)**(1/2);
+for(let j=2;j<n;j++){
+if(array[i]%j==0)                     //checks whether the number is divisible by other numbers except 1
+{
+flag=1;                               //if number is not prime, count changes to 1 and breaks out of the loop
+break;
+}
+}
+if(flag==0 && array[i]!=1)
+prime.push(array[i]);                //if count remains zero and number is not 1 then the number is prime and is pushed inside the array prime
+}
+return prime;                         //returns the array of prime numbers
+})([1,2,-3,4,5,6,-7,8,9,10,11,12]);       //takes value of the array taken as parameter of the function
+
+e. Return all the palindromes in an array
+
+CODE USING ANONYMOUS FUNCTION-
+let arr=function(array){
+let palindrome=[];
+let c=[];
+var p;
+var k;
+var flag;
+for(let i=0;i<array.length;i++){
+flag=0;
+p=array[i].toString();
+c=p.split("");
+
+for(let j=0,k=c.length-1;j<c.length,k>=0;j++,k--){                 
+if(parseInt(c[j])!=parseInt(c[k]))                      //checks for palindrome
+{
+flag=1;                                            //if the element of the array is not palindrome, count changes to 1 and breaks out of the loop
+break;
+}
+}
+if(flag==0)
+palindrome.push(array[i]);                         //if count remains zero then the element of array is palindrome and is pushed inside the array palindrome
+}
+return palindrome;                                //returns the array of palindrome
+}
+console.log(arr([1234,43534,3432,343]));            //takes value of the array taken as parameter of the function and prints array of palindrome     
+
+OUTPUT-
+[ 43534, 343 ]
+
+CODE USING IIFE(Immediately Invoked Function Expression)-
+(function(array){
+let palindrome=[];
+let c=[];
+var p;
+var k;
+var flag;
+for(let i=0;i<array.length;i++){
+flag=0;
+p=array[i].toString();
+c=p.split("");
+
+for(let j=0,k=c.length-1;j<c.length,k>=0;j++,k--){
+if(parseInt(c[j])!=parseInt(c[k]))                      //checks for palindrome
+{
+flag=1;                                                  //if the element of the array is not palindrome, count changes to 1 and breaks out of the loop
+break;
+}
+}
+if(flag==0)
+palindrome.push(array[i]);                               //if count remains zero then the element of array is palindrome and is pushed inside the array palindrome
+}
+return palindrome;                                         //returns the array of palindrome
+})([1234,43534,3432,343]);                                    //takes value of the array taken as parameter of the function 
+
+f. Return median of two sorted arrays of the same size
+
+CODE USING ANONYMOUS FUNCTION-
+let arr=function(array1,array2){
+var merge=[];
+var sortarr=[];
+var median;
+var temp;
+for(let i=0;i<array1.length;i++)
+merge[i]=parseInt(array1[i]);                       //enters elements of first array in merge[] array
+for(let i=array1.length;i<(array2.length*2);i++)
+merge[i]=parseInt(array2[i-array2.length]);         //enters elements of second array in the merge[] array 
+for(let i=0;i<merge.length-1;i++){                  //merge[] array is getting sorted in ascending order
+for(let j=0;j<merge.length-1-i;j++){
+temp=0;
+if(merge[j]>merge[j+1]){                            //checks condition and sorts it accordingly
+temp=merge[j];
+merge[j]=merge[j+1];
+merge[j+1]=temp;
+}
+}
+}
+let n=merge.length/2;
+median=(merge[n-1]+merge[n])/2;                    //calculates the median of the sorted array merge[]
+return median;                                     //returns median
+}
+console.log(arr([1,2,6,4,8],[1,6,11,5,20]));       //takes value of the arrays taken as parameters of the function and prints the median
+
+OUTPUT-
+5.5
+
+CODE USING IIFE(Immediately Invoked Function Expression)-
+(function(array1,array2){
+var merge=[];
+var sortarr=[];
+var median;
+var temp;
+for(let i=0;i<array1.length;i++)
+merge[i]=parseInt(array1[i]);                       //enters elements of first array in merge[] array
+for(let i=array1.length;i<(array2.length*2);i++)
+merge[i]=parseInt(array2[i-array2.length]);         //enters elements of second array in the merge[] array 
+for(let i=0;i<merge.length-1;i++){                  //merge[] array is getting sorted in ascending order
+for(let j=0;j<merge.length-1-i;j++){
+temp=0;
+if(merge[j]>merge[j+1]){                            //checks condition and sorts it accordingly
+temp=merge[j];
+merge[j]=merge[j+1];
+merge[j+1]=temp;
+}
+}
+}
+let n=merge.length/2;
+median=(merge[n-1]+merge[n])/2;                    //calculates the median of the sorted array merge[]
+return median;                                     //returns median
+})([1,2,6,4,8],[1,6,11,5,20]);                     //takes value of the arrays taken as parameters of the function 
+
+g. Remove duplicates from an array
+
+CODE USING ANONYMOUS FUNCTION-
+let arr=function(array){
+let c=[];
+let noduplicate=[];
+for(i=0;i<array.length;i++)
+c[i]=parseInt(array[i]);                         //converting the elements of array to integer                  
+for(let i=0;i<c.length;i++){
+for(let j=0;j<c.length;j++){
+if(c[i]==c[j] && i!=j)                           //checking for duplicates in the array c[]
+c[j]="";                                         //replacing duplicates with ""                                
+}
+}
+for(let i=0;i<c.length;i++){
+if(c[i]!="")
+noduplicate.push(c[i]);                          //pushing the elements of the array without duplicates to the array noduplicate[]
+}
+console.log(noduplicate);                        //printing the array without duplicates
+}
+arr([1234,43534,1234,343,1,8,6,8,7,5,6]);        //takes value of the array taken as parameter of the function 
+
+OUTPUT-
+[ 1234, 43534, 343, 1, 8, 6, 7, 5 ]
+
+CODE USING IIFE(Immediately Invoked Function Expression)-
+(function(array){
+let c=[];
+let noduplicate=[];
+for(i=0;i<array.length;i++)
+c[i]=parseInt(array[i]);                         //converting the elements of array to integer                  
+for(let i=0;i<c.length;i++){
+for(let j=0;j<c.length;j++){
+if(c[i]==c[j] && i!=j)                           //checking for duplicates in the array c[]
+c[j]="";                                         //replacing duplicates with ""                                
+}
+}
+for(let i=0;i<c.length;i++){
+if(c[i]!="")
+noduplicate.push(c[i]);                          //pushing the elements of the array without duplicates to the array noduplicate[]
+}
+console.log(noduplicate);                        //printing the array without duplicates
+})([1234,43534,1234,343,1,8,6,8,7,5,6]);        //takes value of the array taken as parameter of the function
+
+OUTPUT-
+[ 1234, 43534, 343, 1, 8, 6, 7, 5 ]
+
+h. Rotate an array by k times
+
+CODE USING ANONYMOUS FUNCTION-
+let arr=function(array,k){
+var p;
+for(let i=1;i<=k;i++){
+p=array.length;
+array.unshift(array[p-1]);                      //adds the element of the last index to the 0th index 
+array.pop();                                    //deletes the element of the last index of the array
+}                                               //does the above operation for k times
+console.log(array);                             //prints the array after k times rotation
+}
+arr([1,2,3,4,5],3);                             //takes value of the array and k taken as parameters of the function 
+
+OUTPUT-
+[ 3, 4, 5, 1, 2 ]
+
+CODE USING IIFE(Immediately Invoked Function Expression)-
+(function(array,k){
+var p;
+for(let i=1;i<=k;i++){
+p=array.length;
+array.unshift(array[p-1]);                      //adds the element of the last index to the 0th index 
+array.pop();                                    //deletes the element of the last index of the array
+}                                               //does the above operation for k times
+console.log(array);                             //prints the array after k times rotation
+})([1,2,3,4,5],3);                             //takes value of the array and k taken as parameters of the function 
+
+OUTPUT-
+[ 3, 4, 5, 1, 2 ]
+
+
+3. Do the below programs in arrow functions
+
+a. Print odd numbers in an array
+
+CODE USING ARROW FUNCTION-
+let oddnum=(array)=>{
+let odd=[];
+for(let i=0;i<array.length;i++){
+if(array[i]%2!=0)              //checks for odd numbers
+odd.push(array[i]);            //pushes the odd numbers in odd[] array
+}
+console.log(odd);
+}
+oddnum([1,2,3,4,5,6,7,8,9,10,11,12]);     //takes value of the array taken as parameter of the function
+
+OUTPUT-
+[ 1, 3, 5, 7, 9, 11 ]
+
+b.Convert all the strings to title caps in a string array
+
+CODE USING ARROW FUNCTION-
+let titlecase=(str)=>{
+var str1=[];
+var str2=[];
+var s="";
+var f="";
+var c;
+var f;
+var p=[];
+for(let i=0;i<str.length;i++){
+str[i]=str[i].toString();
+str[i]=str[i].toLowerCase();                      //converting all the elements of array of strings to lowercase
+str2[i]=str[i].charAt(0).toUpperCase();            //converting the first letter of each element of array to uppercase
+c=str[i];
+p=c.split("");                                    //spliting the letters of each element in the array
+for(let j=1;j<p.length;j++){
+s+=p[j];                                          //storing the letters of each element of the array starting from 2nd letter to last letter of each element in the string s
+}
+f=str2[i]+s;                                      //storing the 1st uppercase letter and rest lowercase letters of each element of the array in string f 
+str1[i]=f;                                         //storing string f as an element of str1[]
+s="";                                              //assigning null value to string s and f so that it can convert next element of array to titlecase
+f="";
+}
+console.log(str1);                                //printing strings in array converted to titlecase
+}
+titlecase(["geeks","krittika","rAShita","aRnab"]);     //takes value of the array taken as parameter of the function 
+
+OUTPUT-
+[ 'Geeks', 'Krittika', 'Rashita', 'Arnab' ]
+
+c.Sum of all numbers in an array
+
+CODE USING ARROW FUNCTION-
+let sumnum=(array)=>{
+let sum=0;
+for(let i=0;i<array.length;i++)
+sum+=array[i];                           //adds the elements of array and stores in sum
+console.log(sum);
+}
+sumnum([1,2,3,4,5,6,7,8,9,10,11,12]);       //takes value of the array taken as parameter of the function
+
+OUTPUT-
+78
+
+d. Return all the prime numbers in an array
+
+CODE USING ARROW FUNCTION-
+let num=(array)=>{
+let prime=[];
+let flag;
+for(let i=0;i<array.length;i++){
+flag=0;
+let n=(array[i]**2)**(1/2);
+for(let j=2;j<n;j++){
+if(array[i]%j==0)                         //checks whether the number is divisible by other numbers except 1
+{
+flag=1;                                   //if number is not prime, count changes to 1 and breaks out of the loop
+break;
+}
+}
+if(flag==0 && array[i]!=1)
+prime.push(array[i]);                    //if count remains zero and number is not 1 then the number is prime and is pushed inside the array prime
+}
+return prime;                            //returns the array of prime numbers
+}
+console.log(num([1,2,-3,4,5,6,-7,8,9,10,11,12]));       //takes value of the array taken as parameter of the function and prints prime numbers
+
+OUTPUT-
+[ 2, -3, 5, -7, 11 ]
+
+e. Return all the palindromes in an array
+
+CODE USING ARROW FUNCTION-
+let arr=(array)=>{
+let palindrome=[];
+let c=[];
+var p;
+var k;
+var flag;
+for(let i=0;i<array.length;i++){
+flag=0;
+p=array[i].toString();
+c=p.split("");
+
+for(let j=0,k=c.length-1;j<c.length,k>=0;j++,k--){                 
+if(parseInt(c[j])!=parseInt(c[k]))                      //checks for palindrome
+{
+flag=1;                                            //if the element of the array is not palindrome, count changes to 1 and breaks out of the loop
+break;
+}
+}
+if(flag==0)
+palindrome.push(array[i]);                         //if count remains zero then the element of array is palindrome and is pushed inside the array palindrome
+}
+return palindrome;                                //returns the array of palindrome
+}
+console.log(arr([1234,43534,3432,343]));            //takes value of the array taken as parameter of the function and prints array of palindrome     
+
+OUTPUT-
+[ 43534, 343 ]
+
+
+
+
+
+
+
+
+
+       
+
+
+
+
+
+
+
+
